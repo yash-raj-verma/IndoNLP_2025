@@ -1,0 +1,51 @@
+Thank you for considering our submission for testing for reproducability. Hope you find a smooth generation of results using our directions mentioned below.
+
+There are three files along with the consolidated datasets present in the supplementary material zip folder. Eachfilename speaks for itself. 
+
+	1. English_Hindi_Categorical_Analysis_GPT_3.5.csv: It comprises of the results as well the prompts used to produce the results using GPT-3.5.
+
+	2. English_Hindi_Categorical_Analysis_GPT_4.csv: It comprises of the results as well the prompts used to produce the results using GPT-4 Turbo.
+
+	3. English_Hindi_Categorical_Analysis_LLaMa3_8B.csv: It comprises of the results as well the prompts used to produce the results using LLaMa3-8B.
+	
+	4. Code: It comprises of all the results and setup we ran for LLaMa setting along with some results and log files. For GPT-3.5 and GPT-4 Turbo we ran experiments manually.
+
+Each file comprises of parallel problems in English and Hindi. The structure of all the csv files:
+
+	1. English: This column has 100 combinatorics problems in English.
+	
+	2. Hindi Original: This column has all the parallel problems in Hindi language.
+	
+	3. Categories: This column has the subcategory to which the problem belongs to under the parent category of Combinatorics.
+	
+	4. Sol: Exact solution extracted from the NCERT texbook in English and Hindi.
+	
+	5. To reproduce the results one should use the prompts writtent in Prompt for English, Prompt for Hindi, Category Choosing Prompts present in the csv files as MCQ question.
+	
+	6. Columns after Column Number 4 are all used for generating our results. Catergories by Llama, GPT3.5, GPT4 after asking them to choose the category of the problem by giving MCQ type prompt present in each csv files later in the columns. 
+	
+	7. The red colour in a column indicates our obtained result was negative after 3 trials and green means that the solution was correct for atleast 1 out of 3 trials.
+	
+
+Sample Prompts to use while using column A, B, C, D:
+
+1. For One-Shot Prompting: You are an expert in solving mathematics problems on permutations and combinations. Use your expertise to solve this problem:  "Text from Column A or Column B"
+
+2. For Chain-of-Thought Prompting: This has to run in one go through api Openai or Llama.
+
+	i) "Choose the category this problem belongs to, any give only the final option:  "Text from Column A or B"
+		a) Combinations
+		b) Combinations
+		c) Permutation with restrictions
+		d) Permutation without restrictions
+		e) Fundamental principle of counting"
+	ii) The solution obtained from LLM using above prompt is saved in a variable and used to create another prompt which is
+	iii) You are an expert in solving mathematics problems on "Solution Obtained from Step 1". Use your expertise to solve this problem:  "Text from Column A or Column B"
+	iv) Now LLM will be prompted again by giving the whole history of this conversation from Step 1 and prompted with this new prompt obtained in step iii)
+	
+3) For One-Shot using Subcategory: You are expert in solving mathematics problems on "Corresponding Entry from Column E". Use your expertise to solve this problem: "Text from Column A or Column B"
+
+One may create these substring themselves to generate the results or may use the prompts generated already in the csv files for each LLM.
+
+
+
