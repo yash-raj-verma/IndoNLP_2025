@@ -1,6 +1,6 @@
 Thank you for considering our submission for testing for reproducability. Hope you find a smooth generation of results using our directions mentioned below.
 
-There are three files along with the consolidated datasets present in the supplementary material zip folder. Eachfilename speaks for itself. 
+There are three files along with the consolidated datasets present in the supplementary material zip folder. Each filename speaks for itself. 
 
 	1. English_Hindi_Categorical_Analysis_GPT_3.5.csv: It comprises of the results as well the prompts used to produce the results using GPT-3.5.
 
@@ -8,7 +8,9 @@ There are three files along with the consolidated datasets present in the supple
 
 	3. English_Hindi_Categorical_Analysis_LLaMa3_8B.csv: It comprises of the results as well the prompts used to produce the results using LLaMa3-8B.
 	
-	4. Code: It comprises of all the results and setup we ran for LLaMa setting along with some results and log files. For GPT-3.5 and GPT-4 Turbo we ran experiments manually.
+	4. Code: One can use the prompts we have given to give call to LLMs via api calls.
+	
+	5. Language_Understanding_Experimentation_Dataset.csv: This dataset is used to do error analysis of the component where Hindi language understanding of LLM is being studied which is giving the results of the considered LLM obtained on Combinatorics problems posed in Hindi. It comprises of the accuracy of all the LLMs in their respective named sheet.
 
 Each file comprises of parallel problems in English and Hindi. The structure of all the csv files:
 
